@@ -1,9 +1,9 @@
-import mongoose, { Schema, Document } from "mongoose";
+const mongoose =  require ("mongoose");
 
-const astrologyProfileSchema = new Schema < IAstrologyProfile > (
+const astrologyProfileSchema = new mongoose.Schema (
     {
         userId: {
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "User",
             required: true,
             unique: true,
@@ -27,9 +27,9 @@ const astrologyProfileSchema = new Schema < IAstrologyProfile > (
                 trim: true,
             },
             city: {
-                type: string
+                type: String
             },
-            state?: {
+            state: {
                 type: String,
             },
             
@@ -58,8 +58,5 @@ const astrologyProfileSchema = new Schema < IAstrologyProfile > (
     }
 );
 
-export const AstrologyProfile =
-    mongoose.model(
-        "AstrologyProfile",
-        astrologyProfileSchema
-    );
+const AstrologyProfile =mongoose.model("AstrologyProfile",astrologyProfileSchema);
+module.exports = AstrologyProfile 

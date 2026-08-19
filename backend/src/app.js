@@ -1,4 +1,5 @@
 const express = require ('express');
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.get('/', (req, res) => {
         messge: "server is running"
     })
 })
+
+app.use("/users", userRoutes);
 
 
 module.exports =  app;
