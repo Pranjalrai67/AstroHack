@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-const astrologyProfileSchema = new Schema<IAstrologyProfile>(
+const astrologyProfileSchema = new Schema < IAstrologyProfile > (
     {
         userId: {
             type: Schema.Types.ObjectId,
@@ -25,6 +25,16 @@ const astrologyProfileSchema = new Schema<IAstrologyProfile>(
                 type: String,
                 required: true,
                 trim: true,
+            },
+            city: {
+                type: string
+            },
+            state?: {
+                type: String,
+            },
+            
+            country:{
+                type: String,
             },
 
             latitude: {
