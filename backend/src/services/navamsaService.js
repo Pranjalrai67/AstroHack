@@ -1,11 +1,9 @@
 
 const axios = require('axios');
+require('dotenv').config()
 
 const getNavamsaService = async (date,year, month,hour,minute,second, latitude, longitude) => {
     try{
-        console.log("Requesting Navamsa Service with parameters:", {
-            date, year, month, hour, minute, second, latitude, longitude
-        });
         const response = await axios.post(
             "https://json.freeastrologyapi.com/navamsa-chart-info",{
             "year": year,
@@ -23,13 +21,11 @@ const getNavamsaService = async (date,year, month,hour,minute,second, latitude, 
         },{
                 headers: {
                     "Content-Type": "application/json",
-                    "x-api-key": "aQeu4PviY88McXBaLXnw154zSmrv9IZu5QTbdGhE"
+                    "x-api-key": process.env.ASTROAPIKEY
                 }   
             }
 
         );
-        // console.log("Received response from Navamsa Service:", response);
-        console.log("Received response from Navamsa Service:", response.data.output);
         return response.data.output;
 
         

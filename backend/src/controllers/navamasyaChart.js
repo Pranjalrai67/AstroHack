@@ -10,7 +10,9 @@ const getNavamsaDetails = async (req, res) => {
         //     });
         // }
         const data = await getNavamsaService(date,year, month,hour,minute,second, latitude, longitude);
-        res.status(200).json(data);
+        
+        return data;
+
     } catch (error) {
         console.error(error.response?.data || error.message);
 

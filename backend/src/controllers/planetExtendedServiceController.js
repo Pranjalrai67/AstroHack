@@ -1,4 +1,4 @@
-const { getPlanetExtendedService } = require("../services/navamsaService");
+const { getPlanetExtendedService } = require("../services/planetExtendedService");
 
 const getPlanetExtendedDetails = async (req, res) => {
     try {
@@ -13,7 +13,7 @@ const getPlanetExtendedDetails = async (req, res) => {
 
         const data = await getPlanetExtendedService(date,year, month,hour,minute,second, latitude, longitude);
 
-        res.status(200).json(data);
+        return data;
     } catch (error) {
         console.error(error.response?.data || error.message);
 

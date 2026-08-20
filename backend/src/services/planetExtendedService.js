@@ -1,5 +1,6 @@
 
 const axios = require('axios');
+require('dotenv').config();
 
 const getPlanetExtendedService = async (date,year, month,hour,minute,second, latitude, longitude) => {
     try{
@@ -22,7 +23,7 @@ const getPlanetExtendedService = async (date,year, month,hour,minute,second, lat
         },{
                 headers: {
                     "Content-Type": "application/json",
-                    "x-api-key": "aQeu4PviY88McXBaLXnw154zSmrv9IZu5QTbdGhE"
+                    "x-api-key": process.env.ASTROAPIKEY
                 }   
             }
 

@@ -1,4 +1,5 @@
 const axios = require("axios");
+require('dotenv').config();
 
 const getGeoDetails = async (location) => {
     try {
@@ -11,7 +12,7 @@ const getGeoDetails = async (location) => {
             {
                 headers: {
                     "Content-Type": "application/json",
-                    "x-api-key": "aQeu4PviY88McXBaLXnw154zSmrv9IZu5QTbdGhE"
+                    "x-api-key": process.env.ASTROAPIKEY
                 }   
             }
         );
